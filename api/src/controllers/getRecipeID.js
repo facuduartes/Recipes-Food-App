@@ -3,11 +3,30 @@ const axios = require('axios');
 const { Recipe, DietType } = require('../db');
 const { API_KEY } = process.env;
 const getAllRecipes = require('./getAllRecipes');
+const { Op } = require('sequelize');
 
 const getRecipeID = async (id) => {
     if (id.includes('-')) {
+        try {
 
-        return Recipe.findByPk(id)
+            const findID = await Recipe.findOne({
+
+                where: { id },
+                include: {
+
+                    model: DietType,
+                     attributes: ['name'],
+                   
+                   
+                }
+    
+                
+            })
+            return findID
+
+        } catch (e) {
+            return 'Recipe not found'
+        }
     } else {
 
 

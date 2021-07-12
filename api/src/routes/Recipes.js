@@ -7,17 +7,17 @@ const { Recipe, DietType } = require('../db');
 
 const getAllRecipes = require('../controllers/getAllRecipes');
 const getRecipeID = require('../controllers/getRecipeID')
-const setDiet = require('../controllers/setDiet');
+
 
 router.get('/', async (req, res) => {
 
-  const { title } = req.query;
+  const { name } = req.query;
 
 
 
-  let recipesFinish = await getAllRecipes(title);
+  let recipesFinish = await getAllRecipes(name);
 
-  recipesFinish
+  recipesFinish.length
     ? res.status(200).send(recipesFinish)
     : res.status(404).send('Recipe not found');
     

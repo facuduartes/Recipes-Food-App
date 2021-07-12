@@ -11,18 +11,28 @@ const getAllRecipes = async (title) => {
     if (title) {
 
         const recipesAPI = await axios.get(`${RECIPIES_URL}number=${number}&query=${title}&apiKey=${API_KEY}`);
-        const recipesDB = await Recipe.findAll({ where: { title: { [Op.like]: `%${title}%` } } });
 
-        const recipes = recipesAPI.data.results.concat(recipesDB);
-        let recipesTotal = recipes.map(//hago un mapeo para traerme unicamente las propiedades  que necesito 
+        let recipes = recipesAPI.data.results.map(//hago un mapeo para traerme unicamente las propiedades  que necesito 
             r => {
+                const dietsName=r.diets.map(d => d = { name: d })
                 return {
+                   
                     id: r.id,
                     title: r.title,
                     image: r.image,
-                    DietTypes: r.diets
+                    
+                    DietTypes:  dietsName
                 };
             })
+        const recipesDB = await Recipe.findAll({ where: { title: { [Op.like]: `%${title}%` } },include: {
+           
+            model: DietType,
+            attributes: ['name'],
+         
+        } });
+
+        const recipesTotal = recipes.concat(recipesDB);
+        
 
         return recipesTotal
     } else {
@@ -32,24 +42,28 @@ const getAllRecipes = async (title) => {
 
         let recipes = recipesAPI.data.results.map(//hago un mapeo para traerme unicamente las propiedades  que necesito 
             r => {
+                const dietsName=r.diets.map(d => d = { name: d })
                 return {
+                   
                     id: r.id,
                     title: r.title,
                     image: r.image,
-                    DietTypes: r.diets,
+                    
+                    DietTypes:  dietsName
                 };
             })
 
         let recipesDB = await Recipe.findAll({
-            include: {
+        
 
-                model: DietType,
-                attributes: ['name'],
-                // through: {
-                //     attributes: [],
-                // },
+             include: {
+           
+                 model: DietType,
+                 attributes: ['name'],
                
-            }
+                
+             }
+         
 
         });
 
