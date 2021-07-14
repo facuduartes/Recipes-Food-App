@@ -1,0 +1,9 @@
+
+body{
+     background-image:url('../../Assets/17201-gris.jpg') ; 
+   /* background-color:#454F4D ; */
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
