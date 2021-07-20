@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const Styled = styled.div`
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	width: 100%;
 	height: 50px;
 	overflow: hidden;
-	// #0EC495
 	background-color: #C6AA2D   ;
 	position: fixed;
 	top: 0px;
@@ -14,11 +14,13 @@ export const Styled = styled.div`
 	box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
 
 	.div_logo {
-		display: flex;
-		justify-content: flex-end;
-		width: 400px;
+
+		 display: flex;
+	
+	
+		margin-left:10px;
 		height: fit-content;
-		margin-left: 20px;
+		// margin-left: 20px;
 		align-items: center;
 		.logo {
 			text-decoration: none;
@@ -28,10 +30,10 @@ export const Styled = styled.div`
 	}
 
 	.div_menu {
-		width: 100%;
+		 
 		display: flex;
 		justify-content: flex-end;
-		margin-right: 100px;
+		// margin-right: 100px;
 		.div_link {
 			display: flex;
 			align-items: center;

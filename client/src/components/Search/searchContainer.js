@@ -1,6 +1,7 @@
-import { useEffect ,useState} from "react";
+import { useEffect, useState } from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
-import { getRecipeName } from "../../Actions/actions";
+import { getRecipeName,getRecipes } from "../../Actions/actions";
+import Loader from "../Loader/loader";
 
 
 
@@ -9,7 +10,7 @@ export const Search = () => {
 
     const [name, setName] = useState("");//estado local
 
-   
+    const loading = useSelector(state => state.loading);
 
 
 
@@ -20,47 +21,46 @@ export const Search = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
-         if (name.length) {
-           dispatch( getRecipeName(name))
-           
+        if (name.length) {
+          
+            dispatch(getRecipeName(name))
+
+        }else {
+            dispatch(getRecipes())
         }
     }
 
-    
+
     return (
-       
+      
 
-            <div className='div_nav'>
-
-                <form onSubmit={(e) => handleSubmit(e)}>
-                    <input
-
-                        className='title'
-                        type='text'
-                        placeholder='Search country'
-                        onChange={(e) => handleChange(e)}
-                    />
-
-
-                </form>
-                <button type='submit'> Search</button>
-            </div>
-
-
+        <div className='div_nav'>
+  
+            <form onSubmit={(e) => handleSubmit(e)}>
         
+                <input
+
+                    className='title'
+                    type='text'
+                    placeholder='Search recipe'
+                    onChange={(e) => handleChange(e)}
+                />
+                <button type='submit'> Search</button>
+
+            </form>
+    
+        </div>
+
+
+
 
 
 
     );
 
-    
+
 }
 
 
-// function mapDispatchToProps(dispatch) {
-//     return {
-//         getRecipeName: name => dispatch(getRecipeName(name))
-//     };
-// }
 
-export default  (Search);
+export default (Search);

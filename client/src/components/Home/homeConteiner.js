@@ -1,24 +1,32 @@
 import React, { useEffect, useReducer, useState } from 'react';
-import { getRecipes } from '../../Actions/actions';
+import { getDiets, getRecipes } from '../../Actions/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { GROUP_RECIPES } from '../../utils/constants';
 import recipe, { Recipe } from './recipe'
 import PaginateContainer from '../Page/paginateContainer';
 import { Styled } from './styled';
+import { FilterConteiner } from '../Filters/filterConteiner';
+import NotFound from '../NotFound/notFound';
+import Loader from '../Loader/loader';
 
 export const Home = () => {
 
     const [page, setPage] = useState(1);
 
     const dispatch = useDispatch();
-
+    const loading = useSelector(state => state.loading);
     const recipesLoaded = useSelector(state => state.recipesLoaded);
 
 
 
     useEffect(() => {
         dispatch(getRecipes());
-    }, [dispatch]);
+
+    }, []);
+
+    const handleClick = (e) => {
+        dispatch(getRecipes());
+    };
 
 
 
@@ -35,34 +43,52 @@ export const Home = () => {
 
 
     return (
+      
 
-        <Styled >
-
-<div className='recipesList'>
-
-            {recipes && recipes.map(r =>
-
-                <Recipe
-                    id={r.id}
-                    image={r.image}
-                    title={r.title}
-                    DietTypes={r.DietTypes}
-                />
+            <Styled >
 
 
 
+                <FilterConteiner className='filter' />
 
+                {loading ? <Loader /> : (
+                  <div> 
+                    <div className='recipesList'>
 
-            )}
+                        {recipes.length ? recipes.map(r =>
+
+                            <Recipe
+                                id={r.id}
+
+                                image={r.image}
+                                title={r.title}
+                                likes={r.likes}
+                                DietTypes={r.DietTypes}
+                            />
+                        ) : (
+
+                            <NotFound handleClick={handleClick} /> //igualar con el deffault "All" de las opciones de dietas //
+                        )}
+                       
+
+                    </div>
+                    <PaginateContainer
+ recipes={recipes}
+ page={page}
+ setPage={setPage}
+/>
 </div>
 
-            <PaginateContainer
-            recipes={recipes}
-            page={page}
-            setPage={setPage}
-            />
+                )}
 
-        </Styled>
+
+
+
+
+
+            </Styled>
+
+        
     );
 }
 

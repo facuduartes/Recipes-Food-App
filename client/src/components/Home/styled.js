@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Styled = styled.div`
 
-
+margin-top:100px;
 
 .recipesList{
     color:white;
@@ -16,7 +16,7 @@ export const Styled = styled.div`
     flex-wrap:wrap;
 }
 .img{
-    width:100px;
+    width:150px;
     height:100px;
     border-radius:150px;
    
@@ -42,5 +42,19 @@ export const Styled = styled.div`
     transform: translate(-50%, -50%);
     border-radius: 10px;
   }
-
+  .div_back {
+    width: 100px;
+    color: white;
+    text-shadow: 1px 2px 1px black;
+    font-size: 20px;
+    cursor: pointer;
+    &:hover {
+        transform: translateY(-3px);
+        cursor: pointer;
+    }
+    &:active {
+        outline: 0;
+        transform: translateY(3px);
+    }
+}
 `;

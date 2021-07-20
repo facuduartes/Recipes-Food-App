@@ -25,7 +25,7 @@ export const PaginateContainer=({recipes,page,setPage})=> {
         </div>
         <div>
     
-            {recipes.length >= GROUP_RECIPES ?
+            {recipes.length >= GROUP_RECIPES  ?
                 <div className='button'  onClick={()=>setPage(page + 1)}>{` Next >`}</div>
                 : null}
        

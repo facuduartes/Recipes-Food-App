@@ -1,6 +1,7 @@
 import React from 'react';
 import { FORMS } from '../../utils/constants';
 import {Link} from 'react-router-dom';
+import Termino from '../../Assets/Termino.jpg'
 export const Recipe = ({id,
     image,
     title,
@@ -12,8 +13,11 @@ export const Recipe = ({id,
     , instructions}) => {
     return (
         <div>
-            <img src={image}  />
+         {image ? <img src={image} className='img'  /> : <img src={Termino}className='img'  alt="not found" />}
+           
+         <p className="diets">DIETS</p>
             <div className='div_type_container'>
+                
                 {DietTypes &&
                     DietTypes.map((el, i) => (
                         <div key={i} className='div_types'>
@@ -24,7 +28,7 @@ export const Recipe = ({id,
                     ))}
             </div>
             <div className='div_title'>
-                <h1>{title}</h1>
+                <h1>title:{title}</h1>
             </div>
             <div className='div_details'>
                 {FORMS &&
@@ -32,14 +36,11 @@ export const Recipe = ({id,
                         i > 0 ? (
                             <div key={el.name} className='text'>
                                 {el.label}: {eval(el.name)} {/* eval:ejecuto a  codigo javascript representado como cadena */}
-                               
+                              
                             </div>
                         ) : null
                     )}
-                <div className='back'>
-                    
-                <Link to='/home'> {'< BACK'} </Link> 
-                </div>
+                
             </div>
 
         </div>

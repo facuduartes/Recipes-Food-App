@@ -1,7 +1,8 @@
-export const RECIPE_URL='http://localhost:3001/recipes';
+export const RECIPE_URL='http://localhost:3001/recipes/';
+
 export const RECIPE_NAME='http://localhost:3001/recipes?name=';
 export  const RECIPE_ID='http://localhost:3001/recipes/';
-export const DIET_URL='http://localhost:3001/typesfind ';
+export const DIET_URL='http://localhost:3001/types ';
 
 export const GROUP_RECIPES=9;
 
