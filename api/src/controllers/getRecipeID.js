@@ -25,27 +25,33 @@ const getRecipeID = async (id) => {
             return findID
 
         } catch (e) {
-            return 'Recipe not found'
+            return false
         }
     } else {
-
+      
 
         try {
             const recipe = await axios.get(`${RECIPIES_ID}${id}/information?apiKey=${API_KEY}`);
 
             const r = recipe.data;
+       
+            const dietsName=r.diets.map(d => d = { name: d });
+const dish= r.dishTypes.map(d => d = { name: d });
+//  const analyzed= r.analyzedInstructions[0].steps.map((e,i )=>"- " + (++i) +": "+ e.step+" ");
+// r.analyzedInstructions[0].steps.map((s) => { return { step: s.number + ": " + s.step } })
 
             const recipeId = {
                 id: r.id,
                 title: r.title,
                 image: r.image,
                 summary: r.summary,
-                likes: r.aggregateLikes,
+                likes:r.aggregateLikes,
                 health: r.healthScore,
                 readyIn: r.readyInMinutes + " min",
-                //instructions: r.instructions,
-                instructions: r.analyzedInstructions[0].steps.map((s) => { return { step: s.number + ": " + s.step } }),
-                DietTypes: r.diets                   //array           
+                 instructions: r.instructions,
+            //    instructions:analyzed,
+               //dishtypes:dish,
+                DietTypes: dietsName                  //array           
             };
             return recipeId;
 
@@ -55,7 +61,22 @@ const getRecipeID = async (id) => {
             return false;
         };
     }
-    // let recipeTotal = await getAllRecipes();
+   
+
+
+
+
+
+
+
+
+
+}
+
+
+module.exports = getRecipeID;
+
+ // let recipeTotal = await getAllRecipes();
 
     // switch (situation) {
 
@@ -72,16 +93,3 @@ const getRecipeID = async (id) => {
 
     //     default:
     //         return recipeTotal;
-
-
-
-
-
-
-
-
-
-}
-
-
-module.exports = getRecipeID;

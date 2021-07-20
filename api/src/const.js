@@ -9,8 +9,8 @@ const dietTypes= [
     "vegetarian",
     "lacto ovo vegetarian",
     "vegan",
-    "pescetarian",
-    "paleo",
+    "pescatarian",
+    "paleolithic",
     "primal",
     "whole30"
 ]

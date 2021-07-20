@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
   let totalTypes = await DietType.findAll();
   let dietArr = await setDiet();
 
-  totalTypes.length ? res.status(200).send(totalTypes)
+  totalTypes>0 ? res.status(200).send(totalTypes)
 
     : res.status(200).send(dietArr)
 

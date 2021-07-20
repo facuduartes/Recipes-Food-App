@@ -22,13 +22,16 @@ module.exports = (sequelize) => {
 
     },
     readyIn: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      allowNull:true
     },
     likes: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      allowNull:true
     },
     health: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      allowNull:true
     },
     instructions: {
       type: DataTypes.TEXT
