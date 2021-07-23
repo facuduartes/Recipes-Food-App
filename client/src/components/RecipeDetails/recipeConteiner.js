@@ -8,11 +8,16 @@ import { Link } from 'react-router-dom';
 
 export const RecipeConteiner = (props) => {
 
-    console.log(props)
+    // console.log(props)
+
+    
     const dispatch = useDispatch();
 
-    const recipeDetails = useSelector(state => state.recipeDetails)
-    console.log(recipeDetails)
+    const recipeDetails = useSelector(state => state.recipeDetails);
+
+    // console.log(recipeDetails)
+
+
     useEffect(() => {
         dispatch(getRecipeDetail(props.match.params.id));
         return () => dispatch(clearRecipeDetail())
@@ -31,7 +36,7 @@ export const RecipeConteiner = (props) => {
                 DietTypes={recipeDetails.DietTypes}
                 summary={recipeDetails.summary}
          
-                readyIn={recipeDetails.readyIn}
+                 readyIn={recipeDetails.readyIn}
                 likes={recipeDetails.likes}
                 health={recipeDetails.health}
                 instructions={recipeDetails.instructions}

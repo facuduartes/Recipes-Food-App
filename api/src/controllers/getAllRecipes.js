@@ -8,36 +8,6 @@ const { Op } = require('sequelize');
 
 const getAllRecipes = async (title) => {
 
-    // if (title) {
-
-    //     const recipesAPI = await axios.get(`${RECIPIES_URL}number=${number}&query=${title}&apiKey=${API_KEY}`);
-
-    //     let recipes = recipesAPI.data.results.map(//hago un mapeo para traerme unicamente las propiedades  que necesito 
-    //         r => {
-    //             const dietsName=r.diets.map(d => d = { name: d })
-    //             return {
-                   
-    //                 id: r.id,
-    //                 title: r.title,
-    //                 image: r.image,
-    //                 likes:r.aggregateLikes,
-    //                 // score:r.spoonacularScore
-    //                 DietTypes:  dietsName
-                    
-    //             };
-    //         })
-    //     const recipesDB = await Recipe.findAll({ where: { title: { [Op.like]: `%${title}%` } },include: {
-           
-    //         model: DietType,
-    //         attributes: ['name'],
-         
-    //     } });
-
-    //     const recipesTotal = recipes.concat(recipesDB);
-        
-
-    //     return recipesTotal.slice(0,9)
-    // } else {
 
 
         let recipesAPI = await axios.get(`${RECIPIES_URL}number=${number}&apiKey=${API_KEY}`);
@@ -52,8 +22,8 @@ const getAllRecipes = async (title) => {
                     id: r.id,
                     title: r.title,
                     image: r.image,
-                    likes:r.aggregateLikes,
-                     // score:r.spoonacularScore
+                    // likes:r.aggregateLikes,
+                     score:r.spoonacularScore,
                     DietTypes:  dietsName
                 };
             })
@@ -72,7 +42,6 @@ const getAllRecipes = async (title) => {
 
         });
 
-      //  let recipesTotal = recipesDB.concat(recipes);
 
       var recipesTotal= [...recipesDB, ...recipes]
         

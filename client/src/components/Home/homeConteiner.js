@@ -30,9 +30,9 @@ export const Home = () => {
 
 
 
-    const finalCount = page * GROUP_RECIPES;
+    const finalCount = page * GROUP_RECIPES;//1*9=9
 
-    const initialCount = finalCount - GROUP_RECIPES;
+    const initialCount = finalCount - GROUP_RECIPES;//9-9 = 0
 
 
     const recipes = recipesLoaded.slice(initialCount, finalCount);
@@ -73,9 +73,9 @@ export const Home = () => {
 
                     </div>
                     <PaginateContainer
- recipes={recipes}
- page={page}
- setPage={setPage}
+                    recipes={recipes}
+                    page={page}
+                    setPage={setPage}
 />
 </div>
 

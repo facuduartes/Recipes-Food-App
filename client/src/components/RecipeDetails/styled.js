@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 
-export const Styled =styled.div`
+export const Styled = styled.div`
 
    display:flex;
     align-items: center;
@@ -22,11 +22,18 @@ export const Styled =styled.div`
     border:solid rgba(0, 0, 0, 0.2);
     box-shadow: 0px 14px 80px rgba(0, 0, 0, 0.5);
     // padding-bottom: 20px;
-.img{
 
-margin:0% 0% 0% 0%;
+.image{
+    display:flex;
+    justify-content: center;
+    .img{
 
+ 
+        border-radius: 150px;
+        
+        }
 }
+
 
 .diets{
     margin:6% 0% -5% 48%;

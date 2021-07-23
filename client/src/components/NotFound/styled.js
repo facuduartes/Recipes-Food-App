@@ -20,13 +20,5 @@ export const StyledDiv = styled.div`
 			animation: 1s infinite alternate psyduck;
 		}
 	}
-	@keyframes psyduck {
-		from {
-			transform: rotate(-10deg);
-		}
-
-		to {
-			transform: rotate(10deg);
-		}
-	}
+	
 `;

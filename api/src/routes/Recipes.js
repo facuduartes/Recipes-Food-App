@@ -17,8 +17,10 @@ router.get('/', async (req, res) => {
 
   let recipesFinish = await getAllRecipes();
   if (name) {
-    const listName = recipesFinish.filter(e => e.title.toUpperCase().includes(name.toUpperCase()))
-    const list9 = listName.slice(0, 9)
+    const listName = recipesFinish.filter(e => e.title.toUpperCase().includes(name.toUpperCase()));
+
+    const list9 = listName.slice(0, 9);
+    
     if (list9.length>0) {
      return res.status(200).send(list9)
     } else { return res.status(400).send('Recipe not found') }

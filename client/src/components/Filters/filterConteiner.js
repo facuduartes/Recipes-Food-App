@@ -7,7 +7,7 @@ import { Styled } from './styled';
 
 export const FilterConteiner = (props) => {
 
-    console.log("FILTRO", props)
+    // console.log("FILTRO", props)
     const dispatch = useDispatch();
     const diets= useSelector(state=>state.diets)
     // const allRecipes = useSelector(state=>state.recipesLoaded); 

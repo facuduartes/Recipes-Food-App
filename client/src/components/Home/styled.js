@@ -15,6 +15,7 @@ margin-top:100px;
     max-width: 100px
     flex-wrap:wrap;
 }
+
 .img{
     width:150px;
     height:100px;

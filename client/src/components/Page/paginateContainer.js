@@ -13,6 +13,7 @@ export const PaginateContainer=({recipes,page,setPage})=> {
         <div>
     
             {recipes.length <= GROUP_RECIPES&& page>1 ?
+            // segunda pasada recipes=9 y group=9 //recien activo prev
                 <div className='button'  onClick={()=>setPage(page - 1)}>{` < Prev`}</div>
                 : null}
     
@@ -26,6 +27,7 @@ export const PaginateContainer=({recipes,page,setPage})=> {
         <div>
     
             {recipes.length >= GROUP_RECIPES  ?
+            //ultima pasada recipes =1 y group=9 // no cumple
                 <div className='button'  onClick={()=>setPage(page + 1)}>{` Next >`}</div>
                 : null}
        

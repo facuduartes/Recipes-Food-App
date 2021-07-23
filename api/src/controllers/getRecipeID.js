@@ -44,7 +44,7 @@ const dish= r.dishTypes.map(d => d = { name: d });
                 id: r.id,
                 title: r.title,
                 image: r.image,
-                summary: r.summary,
+                summary: r.summary.replace(/<[^>]+>/g, ''),
                 likes:r.aggregateLikes,
                 health: r.healthScore,
                 readyIn: r.readyInMinutes + " min",
