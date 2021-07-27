@@ -1,59 +1,98 @@
 import styled from 'styled-components';
 
+
 export const Styled = styled.div`
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-	height: 50px;
-	overflow: hidden;
-	background-color: #C6AA2D   ;
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
 
-	.div_logo {
+	
+	height:74px;
+    display:flex;
+    justify-content: space-between;
+	box-sizing:border-box;
+	background: rgba(0,0,0,0.6);
+	border-bottom:1px solid #fff;
+    padding:20px 30px;
 
-		 display: flex;
+
+.search-box{
+
+	
+
 	
 	
-		margin-left:10px;
-		height: fit-content;
-		// margin-left: 20px;
-		align-items: center;
-		.logo {
-			text-decoration: none;
-			color: white;
-			text-shadow: 1px 2px 2px black;
+	background: #2f3640;
+	height: 25px;
+	border-radius:40px ;
+	padding:9px 10px;
+	
+.title{
+	border:none;
+	background:none;
+	outline:none;
+	float:left;
+	padding:0;
+	color:white;
+	transition:0.4s;
+	line-height:30px;
+	 width:200px;
+}
+.btn{
+	background:none;
+		border:none;
+	margin-top: -2.5px;
+	&:hover {
+        transform: translateY(-2px);
+        cursor: pointer;
+    }
+    &:active {
+        outline: 0;
+        transform: translateY(3px);
+    }
+}
+
+}
+
+.search-box:hover > .title{
+	width:240px;
+	padding: 0 6px;
+}
+
+
+
+
+
+
+.logo{
+	
+
+padding:0px 20px;
+font-size:23px;
+ font-weight:bold;
+text-transform:uppercase;
+color: #C6AA2D;
+text-decoration: none;
+}
+
+.div_menu{
+	
+	list-style:none;
+	padding: 10px 0px;
+
+}
+
+.link{
+	
+	padding: 0px 30px;
+// font-weight:bold;
+	font-size:14px;
+	text-transform:uppercase;
+	color: white;
+    text-decoration: none;
+
+		:hover{
+			background:#A8A89F;
+			border-radius:10px;
 		}
 	}
 
-	.div_menu {
-		 
-		display: flex;
-		justify-content: flex-end;
-		// margin-right: 100px;
-		.div_link {
-			display: flex;
-			align-items: center;
-			height: 50px;
-			border: solid #dee2e6;
-			border-width: 0px 1px 0px 1px;
-			padding: 0px 3px 0px 3px;
-			margin-right: 10px;
-			background-color: rgba(31, 4, 6, 0.3);
-			.link {
-				text-decoration: none;
-				color: inherit;
-				color: white;
-				text-shadow: 1px 1px 1px black;
 
-				&:active {
-					outline: 0;
-					transform: translateY(3px);
-				}
-			}
-		}
-	}
 `;

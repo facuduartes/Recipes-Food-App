@@ -21,7 +21,7 @@ export const Styled = styled.div`
     background-color: #dfdfdf;
     
     color: rgb(46, 46, 46);
-    padding: 8px;
+    padding: 6px;
     width: 100px;
     border: none;
     font-size: 12px;

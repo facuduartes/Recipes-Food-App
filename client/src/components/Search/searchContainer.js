@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
-import { getRecipeName,getRecipes } from "../../Actions/actions";
+import { getRecipeName, getRecipes } from "../../Actions/actions";
 import Loader from "../Loader/loader";
-
+import dish from '../../Assets/dish.png'
 
 
 export const Search = () => {
@@ -22,34 +22,41 @@ export const Search = () => {
     function handleSubmit(e) {
         e.preventDefault();
         if (name.length) {
-          
+
             dispatch(getRecipeName(name))
 
-        }else {
+        } else {
             dispatch(getRecipes())
         }
     }
 
-
     return (
-      
 
-        <div className='div_nav'>
-  
+     
+
             <form onSubmit={(e) => handleSubmit(e)}>
-        
-                <input
+                <div className='search-box'>
+                    <input
 
-                    className='title'
-                    type='text'
-                    placeholder='Search recipe'
-                    onChange={(e) => handleChange(e)}
-                />
-                <button type='submit'> Search</button>
+                        className='title'
+                        type='text'
+                        placeholder='Search recipe'
+                        onChange={(e) => handleChange(e)}
+                    />
+                    
+<button type='submit' className='btn'>
+
+                  <img   className="btn" src={dish} width="40" height="35" />
+</button>
+                    
+                </div>
+
+               
 
             </form>
-    
-        </div>
+
+            
+       
 
 
 

@@ -14,30 +14,33 @@ export const NavBar = () => {
 
 	return (
 		<Styled>
-			<div className='div_logo'>
+			
+			<div className='div_search' >
 				<Link to='/home' className='logo'>
-					<h2>Henry Food App</h2>
+					Henry Food App
+					
 				</Link>
-				<img src={dish} width="50" height="45" />
+				
 			</div>
-            <div>
+				
+			<div className='search' >
 			
-				<Search/>
-			
-			</div>
+			<Search/>
+		
+		</div>
 			<div className='div_menu'>
-				<div className='div_link'>
+				
 					<Link to='/home' className='link'>
-						HOME
+						HOME 
 					</Link>
-				</div>
-				<div className='div_link'>
+				
+				
 					<Link to='/create' className='link'>
 						CREATE RECIPE
 					</Link>
-				</div>
+				
 			</div>
-		
+			
 		</Styled>
 	);
 };

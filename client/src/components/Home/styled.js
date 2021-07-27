@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Styled = styled.div`
 
-margin-top:100px;
+margin-top:40px;
 
 .recipesList{
     color:white;
