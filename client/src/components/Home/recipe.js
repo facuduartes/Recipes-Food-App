@@ -8,20 +8,28 @@ export const Recipe = ({ id, image, title,likes, DietTypes }) => {
 
     return (
 
-        <div>
+        <div className='card'>
+<div className='link'>
 
-            <NavLink to={`/recipes/${id}`} className='link'>
+            <NavLink to={`/recipes/${id}`} >
 
                
                 {image ? <img src={image} className='img'  /> : <img src={Termino}className='img'  alt="not found" />}
 
             </NavLink>
-            <h3>🍽{title}</h3>
+</div>
+
+           
+<div className="content">
+    
+            <h3 className="text">🍽{title}</h3>
 
 
-            <div >{DietTypes.length ? "Diets :" + DietTypes.map(r => r.name) : "Diets: diets not available"}</div>
+            <div className="text" >🍴{DietTypes.length ? "Diets :" + DietTypes.map(r => r.name) : "Diets: diets not available"}</div>
 
-            <div>💕{"Likes:"+likes}</div>
+            <div className="text">💕{"Likes:"+likes}</div>
+</div>
+         
         </div>
 
 

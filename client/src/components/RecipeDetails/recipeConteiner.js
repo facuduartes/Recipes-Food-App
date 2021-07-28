@@ -28,7 +28,8 @@ export const RecipeConteiner = (props) => {
     return (
 
         <Styled>
-            <h1>RECIPE DETAIL</h1>
+            
+            <h1>RECIPE </h1>
             <Recipe
                 id={recipeDetails.id}
                 image={recipeDetails.image}
@@ -42,9 +43,9 @@ export const RecipeConteiner = (props) => {
                 instructions={recipeDetails.instructions}
             />
 
-<div className='back'>
+<div className="div_back">
 
-<Link to='/home'> {'< BACK'} </Link>
+<Link to='/home' className="div_back"> {'< - BACK - <'} </Link>
 </div>
 
 

@@ -31,7 +31,7 @@ position: fixed;
 .slogan{
   color:#AD9733;
   margin-bottom:50px;
-  font-size:20px;
+  font-size:25px;
   font-family: 'https://fonts.google.com/share?selection.family=Dancing%20Script' ;
 }
 

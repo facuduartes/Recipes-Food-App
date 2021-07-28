@@ -43,16 +43,16 @@ export const Home = () => {
 
 
     return (
-      
-
-            <Styled >
 
 
+        <Styled >
 
-                <FilterConteiner className='filter' />
 
-                {loading ? <Loader /> : (
-                  <div> 
+
+            <FilterConteiner className='filter' />
+
+            {loading ? <Loader /> : (
+                <div>
                     <div className='recipesList'>
 
                         {recipes.length ? recipes.map(r =>
@@ -65,30 +65,37 @@ export const Home = () => {
                                 likes={r.likes}
                                 DietTypes={r.DietTypes}
                             />
-                        ) : (
+                        ) :
+                            <div className="notfound">
+                                
+                                <NotFound handleClick={handleClick} />
 
-                            <NotFound handleClick={handleClick} /> //igualar con el deffault "All" de las opciones de dietas //
-                        )}
-                       
+                                
+                            </div>
+                        }
+
 
                     </div>
-                    <PaginateContainer
-                    recipes={recipes}
-                    page={page}
-                    setPage={setPage}
-/>
-</div>
+                    <div className="pagination">
 
-                )}
+                        <PaginateContainer
+                            recipes={recipes}
+                            page={page}
+                            setPage={setPage}
+                        />
+                    </div>
+                </div>
+
+            )}
 
 
 
 
 
 
-            </Styled>
+        </Styled>
 
-        
+
     );
 }
 

@@ -31,14 +31,14 @@ export const Recipe = ({id,
                     ))}
             </div>
             <div className='div_title'>
-                <h1>title:{title}</h1>
+                <h1>{title}</h1>
             </div>
             <div className='div_details'>
                 {FORMS &&
                     FORMS.map((el, i) =>
                         i > 0 ? (
                             <div key={el.name} className='text'>
-                                {el.label}: {eval(el.name)} {/* eval:ejecuto a  codigo javascript representado como cadena */}
+                           <div className="label">     {el.label}: </div> <div className="res"> {eval(el.name)}</div> {/* eval:ejecuto a  codigo javascript representado como cadena */}
                               {/* mapeo forms 
                                  0: Title :  el.name(title) :(va a tomar las props que me llegan por parametros)          
                               

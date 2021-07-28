@@ -37,6 +37,7 @@ export const Styled = styled.div`
 
 .diets{
     margin:6% 0% -5% 48%;
+    font-size:25px;
 }
 
 
@@ -45,7 +46,7 @@ export const Styled = styled.div`
     display:flex;
     justify-content: space-between;
     margin: 5% 30% 0% 30%;
-    color:#92C6BC;
+    color:#B1FB6B;
 }
 
 .div_details{
@@ -56,4 +57,35 @@ flex-direction:column;
     margin-top:3%;
 }
 }
+
+.div_back{
+     margin:50px 0px 0px 50px;
+    text-decoration: none;
+color: #C6AA2D;
+text-shadow: 1px 2px 1px black;
+font-size: 20px;
+cursor: pointer;
+&:hover {
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+&:active {
+    outline: 0;
+    transform: translateY(3px);
+}
+}
+.text{
+    
+    font-family: 'Poppins', sans-serif;
+.label{
+    font-size:22px;
+    color:#FBEB6B;
+}
+
+.res{
+    margin:15px 0px 0px 30px;
+    font-size:19px;
+}
+}
+
 `;

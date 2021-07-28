@@ -48,7 +48,7 @@ const dish= r.dishTypes.map(d => d = { name: d });
                 likes:r.aggregateLikes,
                 health: r.healthScore,
                 readyIn: r.readyInMinutes + " min",
-                 instructions: r.instructions,
+                 instructions: r.instructions.replace(/<[^>]+>/g, ''),
             //    instructions:analyzed,
                //dishtypes:dish,
                 DietTypes: dietsName                  //array           

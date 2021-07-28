@@ -17,7 +17,7 @@ export const NavBar = () => {
 			
 			<div className='div_search' >
 				<Link to='/home' className='logo'>
-					Henry Food App
+				HR food App 
 					
 				</Link>
 				

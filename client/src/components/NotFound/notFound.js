@@ -5,22 +5,21 @@ import { StyledDiv } from './styled';
 
 const NotFound = ({ handleClick }) => {
     return (
-        <>
+       <StyledDiv>
             
 
-            <div value={'All'} onClick={handleClick} className='div_back'>
-				{'< BACK'}
-			</div>
+            
            
          
                 <div className='div_title'>
-                    <h2 className='title'>Recipes not found</h2>
+                    <h2 className='title'>Recipes not found !</h2>
                 </div>
-                {/* <div className='div_img'>
-					<img className='img' src={img} alt='404' />
-				</div> */}
+               
+                <div value={'All'} onClick={handleClick} className='div_back'>
+				{'< - BACK - <'}
+			</div>
            
-        </>
+            </StyledDiv>
     );
 };
 

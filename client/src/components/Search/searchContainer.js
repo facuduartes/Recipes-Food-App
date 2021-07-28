@@ -17,16 +17,18 @@ export const Search = () => {
 
     function handleChange(e) {
         setName(e.target.value)
+        
     }
 
     function handleSubmit(e) {
         e.preventDefault();
         if (name.length) {
 
-            dispatch(getRecipeName(name))
-
+            dispatch(getRecipeName(name));
+         setName("")
         } else {
-            dispatch(getRecipes())
+            dispatch(getRecipes());
+           setName("")
         }
     }
 
@@ -41,6 +43,7 @@ export const Search = () => {
                         className='title'
                         type='text'
                         placeholder='Search recipe'
+                        value={name}
                         onChange={(e) => handleChange(e)}
                     />
                     

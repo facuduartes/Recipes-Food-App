@@ -22,8 +22,8 @@ const getAllRecipes = async (title) => {
                     id: r.id,
                     title: r.title,
                     image: r.image,
-                    // likes:r.aggregateLikes,
-                     score:r.spoonacularScore,
+                    likes:r.aggregateLikes,
+                     //score:r.spoonacularScore,
                     DietTypes:  dietsName
                 };
             })

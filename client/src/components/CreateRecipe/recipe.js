@@ -1,39 +1,39 @@
 import React from 'react';
-
+import dish from '../../Assets/dishLogo.png'
 const  Recipe=({handleSubmit,handleChange,handleDiets,diets,Data,errors})=> {
     return (
         <>
-        <div>
+        <div className="logo">
 
-            <h1>CREATE YOUR RECIPE </h1>
+            <h1>CREATE YOUR RECIPE</h1>  <img src={dish} width="48" height="45" />
         </div>
         <form classname='form' onSubmit={(e)=>handleSubmit(e)}  >
 
             <label>Recipe Name</label>
             <input classname="title" name="title"  value={Data.title} type='text' placeholder="Recipe name" onChange={(e) => handleChange(e)} />
             {errors.title && (
-                <p >{errors.title}</p>
+                <p className="error" >{errors.title}</p>
             )}
             <label>Summary</label>
             <input classname="summary" name="summary"  value={Data.summary} type='text' placeholder="summary..." onChange={(e) => handleChange(e)} />
             {errors.summary && (
-                <p >{errors.summary}</p>
+                <p  className="error" >{errors.summary}</p>
             )}
             <label>Score</label>
             <input classname="likes" name="likes" value={Data.likes}  placeholder="123..." onChange={(e) => handleChange(e)} />
             {errors.likes&& (
-                <p >{errors.likes}</p>
+                <p className="error"  >{errors.likes}</p>
             )}
             <label>Health Score</label>
             <input classname="healthScore" name="health" value={Data.health}   placeholder="123..." onChange={(e) => handleChange(e)} />
             {errors.health && (
-                <p >{errors.health}</p>
+                <p className="error">{errors.health}</p>
             )}
             <label>Ready In (min)</label>
             <input classname="score" name="readyIn" value={Data.readyIn}  placeholder="123...min" onChange={(e) => handleChange(e)} />
            
-            <label>Instructions</label>
-            <input classname="instructions" name="instructions" value={Data. instructions} type='text' placeholder="instructions..." onChange={(e) => handleChange(e)} />
+            <label >Instructions</label>
+            <textarea type="text" name="instructions" value={Data. instructions}  placeholder="Recipe step by step..." onChange={(e) => handleChange(e)} />
         
         <label >Choose diet/s:</label>
              
@@ -53,7 +53,7 @@ const  Recipe=({handleSubmit,handleChange,handleDiets,diets,Data,errors})=> {
                     </span>)}
 
                     {errors.diet && (
-                <p >{errors.diet}</p>
+                <p className="error" >{errors.diet}</p>
             )}
 </div>
         

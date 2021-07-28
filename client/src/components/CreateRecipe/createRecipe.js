@@ -116,7 +116,7 @@ const CreateRecipe = (props) => {
 
         <div className='back'>
                     
-                    <Link to='/home'> {'< BACK'} </Link> 
+                    <Link to='/home' className="back"> {'< - BACK - <'} </Link> 
                     </div>
             
 
