@@ -1,8 +1,8 @@
 
 
-# Individual Project - Henry Food
+# FULL-STACK  SPA (single page application)
 
-<p align="right">
+<p align="center">
   <img height="200" src="./cooking.png" />
 </p>
 
