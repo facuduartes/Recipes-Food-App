@@ -3,7 +3,7 @@ export const GetDietsOrder = (diet, array) => {
 
     if (diet !== 'all') {
 
-        let recip = array.filter((c) => {
+        let recip = array.filter((c) => { //probar some 
 
             if (c.DietTypes) {
                 for (let i = 0; i < c.DietTypes.length; i++) {
@@ -19,6 +19,9 @@ export const GetDietsOrder = (diet, array) => {
     }
     return array;
 
+
+
+    
 
 };
 
