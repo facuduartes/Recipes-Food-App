@@ -8,7 +8,7 @@
 
 
 
-# Food-Recipes-App
+# Recipes-Food-App
 This is an application where you can search, get details and add Recipes.
 
 In the Back-end data is consumed from a public API on the server side, and it is put together with the new data that is generated in the database to send everything together to the Front-end
