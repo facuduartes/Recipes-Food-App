@@ -38,7 +38,8 @@ const getRecipeID = async (id) => {
             const dietsName=r.diets.map(d => d = { name: d });
 const dish= r.dishTypes.map(d => d = { name: d });
 //  const analyzed= r.analyzedInstructions[0].steps.map((e,i )=>"- " + (++i) +": "+ e.step+" ");
-// r.analyzedInstructions[0].steps.map((s) => { return { step: s.number + ": " + s.step } })
+ r.analyzedInstructions[0].steps.map((s) => { return { step: s.number + ": " + s.step } })
+
 
             const recipeId = {
                 id: r.id,

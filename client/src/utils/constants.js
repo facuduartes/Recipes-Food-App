@@ -1,8 +1,12 @@
-export const RECIPE_URL='http://localhost:3001/recipes/';
 
-export const RECIPE_NAME='http://localhost:3001/recipes?name=';
-export  const RECIPE_ID='http://localhost:3001/recipes/';
-export const DIET_URL='http://localhost:3001/types ';
+const {
+  REACT_APP_API  
+  } = process.env;
+export const RECIPE_URL=REACT_APP_API+"/recipes";
+
+export const RECIPE_NAME=REACT_APP_API+'/recipes?name=';
+export  const RECIPE_ID=REACT_APP_API+'recipes/';
+export const DIET_URL=REACT_APP_API+'/types ';
 
 export const GROUP_RECIPES=10;
 

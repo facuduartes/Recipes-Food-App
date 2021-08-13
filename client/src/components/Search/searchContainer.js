@@ -17,7 +17,7 @@ export const Search = () => {
 
     function handleChange(e) {
         setName(e.target.value)
-        
+
     }
 
     function handleSubmit(e) {
@@ -25,41 +25,41 @@ export const Search = () => {
         if (name.length) {
 
             dispatch(getRecipeName(name));
-         setName("")
+            setName("")
         } else {
             dispatch(getRecipes());
-           setName("")
+            setName("")
         }
     }
 
     return (
 
-     
 
-            <form onSubmit={(e) => handleSubmit(e)}>
-                <div className='search-box'>
-                    <input
 
-                        className='title'
-                        type='text'
-                        placeholder='Search recipe'
-                        value={name}
-                        onChange={(e) => handleChange(e)}
-                    />
-                    
-<button type='submit' className='btn'>
+        <form onSubmit={(e) => handleSubmit(e)}>
+            <div className='search-box'>
+                <input
 
-                  <img   className="btn" src={dish} width="40" height="35" />
-</button>
-                    
-                </div>
+                    className='title'
+                    type='text'
+                    placeholder='Search recipe'
+                    value={name}
+                    onChange={(e) => handleChange(e)}
+                />
 
-               
+                <button type='submit' className='btn'>
 
-            </form>
+                    <img className="btn" src={dish} width="40" height="35" />
+                </button>
 
-            
-       
+            </div>
+
+
+
+        </form>
+
+
+
 
 
 

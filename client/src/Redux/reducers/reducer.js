@@ -21,7 +21,7 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 loading:false,
-                recipesLoaded: action.payload,
+                recipesLoaded: action.payload, 
               recipesFilter:action.payload
             }
         case GET_NAME:
